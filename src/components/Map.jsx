@@ -9,7 +9,7 @@ const Map = () => {
       navigator.geolocation.getCurrentPosition((position) => {
         const { longitude, latitude } = position.coords;
 
-        if (mapRef.current) mapRef.current.setView([latitude, longitude], 13);
+        if (mapRef.current) mapRef.current.setView([latitude, longitude], 100);
       });
     }
   }, []);
@@ -18,9 +18,9 @@ const Map = () => {
     <div>
       <MapContainer
         ref={mapRef}
-        center={[51.505, -0.09]}
-        zoom={13}
-        style={{ height: "400px", width: "100%" }}
+        center={[51.505, 0.09]}
+        zoom={100}
+        style={{ height: "100%", width: "100%" }}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
